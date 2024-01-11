@@ -22,7 +22,7 @@ jobs:
           dotnet-version: 8.0.x
       - run: dotnet build
       - run: cp pr-libshaderc_shared.so bin/Debug/net8.0/runtimes/linux-x64/native/libshaderc_shared.so
-      - run: LD_DEBUG=libs dotnet run
+      - run: LD_DEBUG=libs dotnet run --no-build --no-restore
   spirzza:
     runs-on: ubuntu-latest
     steps:
@@ -33,4 +33,4 @@ jobs:
           dotnet-version: 8.0.x
       - run: dotnet build
       - run: cp spirzza-libshaderc_shared.so bin/Debug/net8.0/runtimes/linux-x64/native/libshaderc_shared.so
-      - run: LD_DEBUG=libs dotnet run
+      - run: LD_DEBUG=libs dotnet run --no-build --no-restore
